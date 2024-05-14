@@ -9,6 +9,12 @@
         <div id="myself">
             <p class="catch">Un petit mot à mon propos</p>
         </div>
+        <section id="music">
+            <div class="button-container">
+                <button class="btn">Jouer</button>
+                <button class="btn">Pause</button>
+            </div>
+        </section>
     </main>
 </template>
 
@@ -34,6 +40,11 @@ main {
         align-items: center;
         margin-top: 20px;
         overflow-x: hidden;
+        height: 150px;
+        @media (min-width:992px) {
+            margin-top: 75px;
+            height: 250px;
+        }
 
         .introduction {
             display: flex;
@@ -43,11 +54,28 @@ main {
                 display: inline-block;
                 animation: jump 3s forwards;
                 animation-delay: calc(0.1s * var(--i));
-                font-size: 40px;
+
+                @media (min-width: 320px) and (max-width: 991px) {
+                    font-size: 48px;
+                    letter-spacing: 6px;
+                }
+
+                @media (min-width: 992px) {
+                    font-size: 150px;
+                    letter-spacing: 24px;
+                }
             }
 
             .letter {
-                letter-spacing: 6px;
+                @media (min-width: 320px) and (max-width: 991px) {
+                    font-size: 48px;
+                    letter-spacing: 6px;
+                }
+
+                @media (min-width: 992px) {
+                    font-size: 150px;
+                    letter-spacing: 24px;
+                }
             }
 
             .dot {
@@ -59,10 +87,41 @@ main {
         }
 
         .catch {
-            letter-spacing: 7px;
-            transform: translateX(-100%);
             opacity: 0;
             animation: translate-x 1s ease forwards;
+            @media (min-width: 320px) and (max-width: 991px) {
+                letter-spacing: 3px;
+                transform: translateX(-100%);
+            }
+            @media (min-width: 992px) {
+                letter-spacing: 3px;
+                transform: translateX(-100%);
+                font-size: 60px;
+            }
+        }
+    }
+
+    #music {
+
+        .button-container {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+            margin: 0 auto;
+            overflow-y: hidden;
+
+            button {
+                font-size: 28px;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                border: 1px solid var(--secondary-color);
+                background: linear-gradient(var(--secondary-color), rgba(131, 3, 163, 0.349));
+                opacity: 0;
+                transform: translateY(150px);
+                animation: translate-y 1s ease forwards
+            }
         }
     }
 }
@@ -73,9 +132,11 @@ main {
     }
     40% {
         transform: translateY(-30px);
+        letter-spacing: 6px;
     }
     60% {
         transform: translateY(-15px);
+        letter-spacing: 3px;
     }
 }
 
@@ -94,6 +155,12 @@ main {
         opacity: 1;
         transform: translateX(0);
     }
-    
+}
+
+@keyframes translate-y {
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 </style>

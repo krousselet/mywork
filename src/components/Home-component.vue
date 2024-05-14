@@ -42,12 +42,15 @@ const generalStore = useGeneralStore();
             height: 100%;
             left: 50%;
             top: 50%;
-            transform: translate(-50%, -50%);
             overflow: hidden;
             transition: background-color .5s ease;
             display: flex;
             justify-content: center;
             align-items: center;
+            transform: translate(-50%, -50%);
+            @media (min-width: 320px) and (max-width: 991px) {
+                box-shadow: 5px 5px 10px black;
+            }
 
             img {
                 width: 100%;
@@ -56,23 +59,30 @@ const generalStore = useGeneralStore();
                 transform: translateY(100%);
                 opacity: 0;
                 border-radius: 7px;
+                @media (min-width: 320px) and (max-width: 991px) {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
 
             &:hover {
-                background: linear-gradient(#417f981c, #5eb4c827);
-                img {
-                    transform: translateY(0);
-                    opacity: 1;
+                @media (min-width: 990px) {
+                    
+                    background: linear-gradient(#417f981c, #5eb4c827);
+                    img {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                    transition: all .5s ease;
+                    box-shadow: 5px 5px 10px black;
                 }
-                transition: all .5s ease;
-                box-shadow: 5px 5px 10px black;
             }
         }
     }
 
     #list-container {
         width: 105%;
-        height: 60px;
+        height: 80px;
         background-color: #323232;
         display: flex;
         justify-content: center;
@@ -81,11 +91,21 @@ const generalStore = useGeneralStore();
         overflow: hidden;
         border-radius: 7px;
         background: transparent;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 7px;
+        position: relative;
+        z-index: 10;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        margin: 125px;
 
         .scrolling-list {
             display: flex;
             flex-direction: row;
             animation: scroll 10s linear infinite alternate;
+            margin: 0;
 
             li {
                 display: flex;

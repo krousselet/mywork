@@ -1,16 +1,19 @@
 <template>
   <Navbar></Navbar>
   <router-view />
+  <Footer></Footer>
 
 </template>
 
 <script>
 import Navbar from '@/components/Navbar-component'
+import Footer from '@/components/Footer-component'
 
 export default {
   name: 'App',
   components: {
     Navbar,
+    Footer,
   }
 }
 </script>
@@ -49,6 +52,14 @@ body {
   background: linear-gradient(var(--main-color), var(--main-secondary-color));
   transition: all .5s ease;
   background-repeat: no-repeat;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 3px;
+  font-size: 28px;
+}
+
+//LISTS
+ul {
+  list-style: none;
 }
 
 @keyframes scroll {
