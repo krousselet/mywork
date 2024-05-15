@@ -58,6 +58,13 @@ body {
   transition: .3s ease;
 }
 
+main {
+  min-height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 //LISTS
 ul {
   list-style: none;
@@ -77,6 +84,16 @@ ul {
   border-radius: 7px;
 }
 
+img {
+  transition: .3s;
+}
+
+img:hover {
+  @media (min-width: 991px) {
+    transition: .3s;
+    transform: rotate(360deg);
+  }
+}
 //KEYFRAMES
 @keyframes jump {
     0%, 20%, 50%, 80%, 100% {

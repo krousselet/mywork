@@ -131,16 +131,17 @@ main {
         align-items: center;
         width: 100%;
         height: 100%;
-        font-size: 24px;
-        margin-top: 50px;
+        font-size: 16px;
+        margin-top: 75px;
         @media (min-width: 991px) {
             flex-direction: row;
             justify-content: space-around;
             width: 100%;
             margin: 75px auto;
-
         }
-
+        @media (min-width: 1500px) and (max-width: 3048px) {
+            font-size: 40px;
+        }
         .title-container {
             display: flex;
             flex-direction: column;
@@ -149,13 +150,15 @@ main {
             text-align: center;
 
             p.text {
-                text-align: center;
+                text-align: justify;
                 @media (min-width: 991px) {
                     @for $i from 1 through 2 {
                         &:nth-of-type(2n + #{$i - 1}) {
                         text-align: if($i == 1, left, right);
                         }
                     }
+                    width: 60%;
+                    height: 60%;
                 }
             }
         }
@@ -166,10 +169,16 @@ main {
             display: flex;
             justify-content: center;
             align-items: center;
+            box-shadow: 0 0 10px var(--main-secondary-color);
+            border-radius: 7px;
+            margin-top: 75px;
+            margin: 75px 25px 0 25px;
+            
 
             img {
                 width: inherit;
                 height: inherit;
+                border-radius: 25%;
             }
         }
     }

@@ -1,4 +1,5 @@
 <template>
+  <main>
     <swiper-container class="swiper-container"
     :modules="[Navigation, Pagination, Autoplay, Mousewheel]"
     :navigation="true"
@@ -11,8 +12,9 @@
     >
       <swiper-slide v-for="(image, imageProjectIndex) in projectsStore.images" :key="imageProjectIndex" class="swiper-slide">
         <a :href="image.link" :target="'_blank'"><img :src="image.path" :alt="image.alt"></a>
-    </swiper-slide>
+      </swiper-slide>
     </swiper-container>
+  </main>
 </template>
 
 <script setup>
@@ -24,11 +26,28 @@ register();
 </script>
 
 <style scoped>
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 100px;
+  height: 800px;
+  width: 100%;
 .swiper-container {
-  width: 60%;
-  height: 100%;
-  padding: 20px;
-  margin-top: 50px;
+  @media (min-width: 320px) and (max-width: 991px) {
+    width: 80%;
+    height: 100%;
+    padding: 20px;
+  }
+
+  @media (min-width: 991px) {
+    width: 50%;
+    height: 100%;
+  }
+
+
 }
 
 .swiper-slide {
@@ -41,16 +60,18 @@ register();
   -webkit-backdrop-filter: blur(5px); /* For Safari */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  height: 300px;
+  height: 500px;
 
   @media (min-width: 991px) {
-    width: 80%;
+    width: 100%;
+    height: 500px;
   }
 }
 
 .swiper-image {
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 10px; /* Rounded corners for images */
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
 }
 </style>

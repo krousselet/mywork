@@ -1,4 +1,5 @@
 <template>
+<main>
     <form name="contact" method="POST" data-netlify="true" action="https://formspree.io/f/xrgnyjkl">
         <input type="hidden" name="form-name" value="contact" />
         <div class="field-container">
@@ -12,6 +13,7 @@
         </div>
             <button class="btn button" type="submit">Envoyer</button>
     </form>
+</main>
 </template>
 
 <script setup>
@@ -30,6 +32,7 @@ form {
     justify-content: center;
     align-items: center;
     margin: 50px auto;
+    height: 100%;
 
     .field-container {
         display: flex;
