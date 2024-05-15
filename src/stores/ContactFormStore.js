@@ -3,6 +3,7 @@ import axios from 'axios';
 
 export const useContactFormStore = defineStore('contactForm', {
     state: () => ({
+        labels: ['Nom :', 'Email :', 'Message :'],
         formData: {
             name: '',
             email: '',
@@ -21,7 +22,6 @@ export const useContactFormStore = defineStore('contactForm', {
                 this.formData = { name: '', email: '', message: '' };
             } catch (error) {
                 console.error('Form submission error:', error);
-                // Handle submission error (e.g., showing an error message)
             }
         },
     },

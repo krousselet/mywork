@@ -23,6 +23,7 @@ footer {
     height: 50px;
     width: 100%;
     font-size: 16px;
+    margin-top: 75px;
 
     #logos-container {
         display: flex;

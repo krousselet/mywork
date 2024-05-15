@@ -11,8 +11,17 @@
         </div>
         <section id="music">
             <div class="button-container">
-                <button class="btn">Jouer</button>
-                <button class="btn">Pause</button>
+                <button class="btn button">Jouer</button>
+                <button class="btn button">Pause</button>
+            </div>
+        </section>
+        <section id="presentation">
+            <div class="title-container">
+                <h1>KEVIN ROUSSELET</h1>
+                <p class="text" v-for="(description, descriptionIndex) in detailsStore.descriptions" :key="descriptionIndex">{{ description }}</p>
+            </div>
+            <div class="image-container">
+                <img :src="detailsStore.myself.path" alt="moi">
             </div>
         </section>
     </main>
@@ -102,6 +111,8 @@ main {
     }
 
     #music {
+        display: flex;
+        flex-direction: column;
 
         .button-container {
             display: flex;
@@ -110,57 +121,57 @@ main {
             align-items: center;
             margin: 0 auto;
             overflow-y: hidden;
-
-            button {
-                font-size: 28px;
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                border: 1px solid var(--secondary-color);
-                background: linear-gradient(var(--secondary-color), rgba(131, 3, 163, 0.349));
-                opacity: 0;
-                transform: translateY(150px);
-                animation: translate-y 1s ease forwards
-            }
         }
     }
-}
 
-@keyframes jump {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-30px);
-        letter-spacing: 6px;
-    }
-    60% {
-        transform: translateY(-15px);
-        letter-spacing: 3px;
-    }
-}
+    #presentation {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        font-size: 24px;
+        margin-top: 50px;
+        @media (min-width: 991px) {
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
+            margin: 75px auto;
 
-@keyframes blink {
-    0% {
-        color: var(--main-color);
-    }
+        }
 
-    100% {
-        color: var(--secondary-color);
-    }
-}
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin: 0 25px;
+            text-align: center;
 
-@keyframes translate-x {
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
+            p.text {
+                text-align: center;
+                @media (min-width: 991px) {
+                    @for $i from 1 through 2 {
+                        &:nth-of-type(2n + #{$i - 1}) {
+                        text-align: if($i == 1, left, right);
+                        }
+                    }
+                }
+            }
+        }
 
-@keyframes translate-y {
-    100% {
-        opacity: 1;
-        transform: translateX(0);
+        .image-container {
+            width: 50%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: inherit;
+                height: inherit;
+            }
+        }
     }
 }
 </style>

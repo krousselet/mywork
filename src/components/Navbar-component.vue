@@ -73,6 +73,7 @@ header {
             justify-content: space-around;
             align-items: center;
             flex-direction: row;
+            margin-top: 50px;
           }
         }
         &.router-link-exact-active {

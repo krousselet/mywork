@@ -55,6 +55,7 @@ body {
   font-family: "Anton", sans-serif;
   letter-spacing: 3px;
   font-size: 28px;
+  transition: .3s ease;
 }
 
 //LISTS
@@ -66,5 +67,70 @@ ul {
     100% {
         transform: translateX(-25%);
     }
+}
+// STATES + PSEUDOS ELEMENTS
+:focus {
+  border: none;
+  box-shadow: 5px 5px var(--main-secondary-color);
+  outline: 1px solid var(--secondary-color);
+  transition: .3s ease;
+  border-radius: 7px;
+}
+
+//KEYFRAMES
+@keyframes jump {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+        letter-spacing: 6px;
+    }
+    60% {
+        transform: translateY(-15px);
+        letter-spacing: 3px;
+    }
+}
+
+@keyframes blink {
+    0% {
+        color: var(--main-color);
+    }
+
+    100% {
+        color: var(--secondary-color);
+    }
+}
+
+@keyframes translate-x {
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes translate-y {
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+//GENERAL CLASSES
+.button {
+  font-size: 28px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(var(--secondary-color), rgba(131, 3, 163, 0.349));
+  opacity: 0;
+  transform: translateY(150px);
+  animation: translate-y 1s ease forwards;
+
+  &:active {
+    background:var(--secondary-color) !important;
+    scale: .9;
+    transition: .1s ease;
+  }
 }
 </style>

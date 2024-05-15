@@ -21,6 +21,7 @@ export const useFooterStore = defineStore('footerStore', {
                 {
                     path: '',
                     alt: 'logo cv',
+                    link: '',
                 },
                 {
                     path: require('@/assets/mobile/instagram.svg'),

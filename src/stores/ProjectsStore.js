@@ -15,12 +15,12 @@ export const useProjectsStore = defineStore('projectsStore', {
                 },
                 {
                     path: '#',
-                    alt: 'test',
+                    alt: 'Projet php en construction',
                     link: '',
                 },
                 {
                     path: '#',
-                    alt: 'test',
+                    alt: 'Projet MovieQuiz en construction',
                     link: '',
                 },
             ]
