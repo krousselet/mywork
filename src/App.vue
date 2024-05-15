@@ -60,6 +60,10 @@ body {
 
 main {
   min-height: 650px;
+  @media (min-width: 991px) {
+    min-height: 100vh;
+    
+  }
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,29 +75,37 @@ ul {
 }
 
 @keyframes scroll {
-    100% {
-        transform: translateX(-25%);
-    }
+  100% {
+    transform: translateX(-25%);
+  }
 }
 // STATES + PSEUDOS ELEMENTS
 :focus {
   border: none;
   box-shadow: 5px 5px var(--main-secondary-color);
-  outline: 1px solid var(--secondary-color);
+  border-bottom: 1px solid var(--secondary-color);
   transition: .3s ease;
   border-radius: 7px;
 }
 
-img {
-  transition: .3s;
-}
+//GENERAL CLASSES
+.button {
+  font-size: 28px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(var(--secondary-color), rgba(131, 3, 163, 0.349));
+  opacity: 0;
+  transform: translateY(150px);
+  animation: translate-y 1s ease forwards;
 
-img:hover {
-  @media (min-width: 991px) {
-    transition: .3s;
-    transform: rotate(360deg);
+  &:active {
+    background:var(--secondary-color) !important;
+    scale: .9;
+    transition: .1s ease;
   }
 }
+
 //KEYFRAMES
 @keyframes jump {
     0%, 20%, 50%, 80%, 100% {
@@ -129,25 +141,29 @@ img:hover {
 @keyframes translate-y {
     100% {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
-//GENERAL CLASSES
-.button {
-  font-size: 28px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(var(--secondary-color), rgba(131, 3, 163, 0.349));
-  opacity: 0;
-  transform: translateY(150px);
-  animation: translate-y 1s ease forwards;
+@keyframes test {
+  25% {
+    transform: rotate(-25deg) translateY(70%);
+            }
+  50% {
+    transform: rotate(0) translateY(40%);
+            }
+  75% {
+    transform: rotate(25deg) translateY(10%);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
-  &:active {
-    background:var(--secondary-color) !important;
-    scale: .9;
-    transition: .1s ease;
+@keyframes appear {
+  100% {
+    opacity: 1;
   }
 }
 </style>

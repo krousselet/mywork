@@ -43,4 +43,15 @@ footer {
         }
     }
 }
+
+img {
+  transition: .3s;
+}
+
+img:hover {
+  @media (min-width: 991px) {
+    transition: .3s;
+    transform: rotate(360deg);
+  }
+}
 </style>

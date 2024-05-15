@@ -14,14 +14,14 @@ export const useProjectsStore = defineStore('projectsStore', {
                     link: 'https://depixelizer.netlify.app/#/',
                 },
                 {
-                    path: '#',
+                    path: require('@/assets/mobile/vineyard_450x450.svg'),
                     alt: 'Projet php en construction',
-                    link: '',
+                    link: 'https://github.com/krousselet/immo_symfony',
                 },
                 {
-                    path: '#',
+                    path: require('@/assets/mobile/mosaicOne.svg'),
                     alt: 'Projet MovieQuiz en construction',
-                    link: '',
+                    link: 'https://github.com/krousselet/movieQuizVuePinia',
                 },
             ]
         }

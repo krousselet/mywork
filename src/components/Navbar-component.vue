@@ -61,25 +61,25 @@ header {
           width: 100%;
 
           a {
-        font-weight: bold;
-        color: var(--main-secondary-color);
-        color: black;
-        text-transform: capitalize;
-        text-decoration: none;
+            font-weight: bold;
+            color: var(--main-secondary-color);
+            color: black;
+            text-transform: capitalize;
+            text-decoration: none;
         
-        @media (min-width: 320px) and (max-width: 991px) {
-          & {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-direction: row;
-            margin-top: 50px;
+            @media (min-width: 320px) and (max-width: 991px) {
+              & {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-direction: row;
+                margin-top: 50px;
+              }
+            }
+              &.router-link-exact-active {
+                color: var(--secondary-color);
+              }
           }
-        }
-        &.router-link-exact-active {
-          color: var(--secondary-color);
-        }
-      }
         }
       }
     }

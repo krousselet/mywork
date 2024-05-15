@@ -9,10 +9,14 @@
         </div>
         <div id="list-container">
             <ul class="scrolling-list">
-                <li v-for="(language, languageIndex) in generalStore.languages" :key="languageIndex">{{ language }}</li>
-                <li v-for="(language, languageIndex) in generalStore.languages" :key="'duplicate-' + languageIndex">{{ language }}</li>
+            <li v-for="(language, languageIndex) in generalStore.languages" :key="languageIndex">
+                {{ language }}
+            </li>
+            <li v-for="(language, languageIndex) in generalStore.languages" :key="'duplicate-' + languageIndex">
+                {{ language }}
+            </li>
             </ul>
-    </div>
+        </div>
     </main>
 </template>
 <script setup>
@@ -34,48 +38,29 @@ const generalStore = useGeneralStore();
         width: 100%;
         height: 500px;
         margin-top: 75px;
-        box-shadow: inset 5px white;
 
         div {
             position: absolute;
-            width: 130%;
+            width: 1024px;
             height: 100%;
             left: 50%;
             top: 50%;
             overflow: hidden;
-            transition: background-color .5s ease;
             display: flex;
             justify-content: center;
             align-items: center;
             transform: translate(-50%, -50%);
             @media (min-width: 320px) and (max-width: 991px) {
-                box-shadow: 5px 5px 10px black;
+                box-shadow: 5px 5px 10px var(--main-secondary-color);
             }
 
             img {
-                width: 100%;
+                width: 1024px;
                 height: auto;
-                transition: transform .5s ease, opacity .5s ease;
                 transform: translateY(100%);
                 opacity: 0;
                 border-radius: 7px;
-                @media (min-width: 320px) and (max-width: 991px) {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-
-            &:hover {
-                @media (min-width: 990px) {
-                    
-                    background: linear-gradient(#417f981c, #5eb4c827);
-                    img {
-                        transform: translateY(0);
-                        opacity: 1;
-                    }
-                    transition: all .5s ease;
-                    box-shadow: 5px 5px 10px black;
-                }
+                animation: test 3.5s ease-in-out forwards;
             }
         }
     }
@@ -83,16 +68,13 @@ const generalStore = useGeneralStore();
     #list-container {
         width: 105%;
         height: 80px;
-        background-color: #323232;
         display: flex;
         justify-content: center;
         align-items: center;
         margin-top: 75px;
         overflow: hidden;
         border-radius: 7px;
-        background: transparent;
         background: rgba(255, 255, 255, 0.1);
-        border-radius: 7px;
         position: relative;
         z-index: 10;
         backdrop-filter: blur(10px);
@@ -106,15 +88,17 @@ const generalStore = useGeneralStore();
             flex-direction: row;
             animation: scroll 10s linear infinite alternate;
             margin: 0;
+            padding: 0;
+            list-style: none;
 
             li {
-                display: flex;
-                color: var(--secondary-color);
-                list-style: none;
-                align-items: center;
-                justify-content: center;
-                padding: 0 40px;
-                height: 60px;
+            display: flex;
+            color: var(--secondary-color);
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            height: 60px;
+            white-space: nowrap; /* Prevent line breaks */
             }
         }
     }
@@ -122,9 +106,6 @@ const generalStore = useGeneralStore();
     @media (min-width: 991px) {
         #test {
             height: 1000px;
-            div:hover {
-                background: linear-gradient(#418098, #5EB5C8);
-            }
         }
     }
 }
@@ -134,7 +115,7 @@ const generalStore = useGeneralStore();
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(20%);
     }
 }
 </style>

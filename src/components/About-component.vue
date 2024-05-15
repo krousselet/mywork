@@ -116,7 +116,7 @@ main {
 
         .button-container {
             display: flex;
-            width: 100%;
+            width: 250px;
             justify-content: space-around;
             align-items: center;
             margin: 0 auto;
@@ -138,6 +138,9 @@ main {
             justify-content: space-around;
             width: 100%;
             margin: 75px auto;
+        }
+        @media (min-width: 991px) and (max-width: 1499px) {
+            font-size: 30px;
         }
         @media (min-width: 1500px) and (max-width: 3048px) {
             font-size: 40px;
@@ -169,7 +172,6 @@ main {
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 0 10px var(--main-secondary-color);
             border-radius: 7px;
             margin-top: 75px;
             margin: 75px 25px 0 25px;

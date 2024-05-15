@@ -33,6 +33,10 @@ form {
     align-items: center;
     margin: 50px auto;
     height: 100%;
+    animation: appear .5s ease forwards;
+    @media (min-width: 991px) {
+        font-size: 32px;
+    }
 
     .field-container {
         display: flex;
@@ -40,11 +44,16 @@ form {
         align-items: center;
         width: 280px;
         margin: 0 auto;
+        @media (min-width: 991px) {
+        width: 500px
+    }
 
         label, input {
             min-width: 150px;
             max-width: 294px;
             margin-bottom: 25px;
+            transform: translateX(-100px);
+            animation: translate-x .3s ease forwards;
         }
 
         input, textarea {
@@ -58,11 +67,16 @@ form {
             }
         }
         textarea {
+            transform: translateX(-100px);
+            animation: translate-x .3s ease forwards;
             @media (min-width: 320px) and (max-width: 991px) {
                 height: 125px;
                 border: 1px solid var(--secondary-color);
                 width: 100%;
             }
+            @media (min-width: 991px) {
+                height: 300px;
+    }
         }
 
     }
