@@ -42,6 +42,7 @@ const splitIntroduction = computed(() => {
 main {
     display: flex;
     flex-direction: column;
+    cursor: default;
 
     #title-container, #myself {
         display: flex;
@@ -121,6 +122,25 @@ main {
             align-items: center;
             margin: 0 auto;
             overflow-y: hidden;
+            @media (min-width: 991px) and (max-width: 1499px) {
+                    width: 75%;
+                }
+            @media (min-width: 1499px) and (max-width: 3080px) {
+                width: 100%;
+            }
+
+            button {
+                @media (min-width: 991px) and (max-width: 1499px) {
+                    width: 150px;
+                    height: 50px;
+                    margin: 0 25px;
+                }
+                @media (min-width: 1499px) and (max-width: 3080px) {
+                    width: 275px;
+                    height: 125px;
+                    margin: 0 50px;
+                }
+            }
         }
     }
 
@@ -152,8 +172,14 @@ main {
             margin: 0 25px;
             text-align: center;
 
-            p.text {
+            h1 {
+                margin: 50px auto;
+            }
+
+            .text {
                 text-align: justify;
+                text-wrap: balance ;
+                margin: 25px auto;
                 @media (min-width: 991px) {
                     @for $i from 1 through 2 {
                         &:nth-of-type(2n + #{$i - 1}) {
@@ -162,6 +188,7 @@ main {
                     }
                     width: 60%;
                     height: 60%;
+                    margin: 25px auto;
                 }
             }
         }

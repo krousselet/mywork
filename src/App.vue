@@ -62,6 +62,7 @@ main {
   min-height: 650px;
   @media (min-width: 991px) {
     min-height: 100vh;
+    min-height: calc((100vh - 122px) / 1.068);
     
   }
   display: flex;

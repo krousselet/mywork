@@ -7,7 +7,7 @@
               <img :src="logo.path" :alt="logo.alt">
             </a>
           </li>
-          <li><a :href="cv" download="Kevin_Rousselet_CV.pdf"><img :src="footerStore.cvPath" alt="logo d'un cv"></a></li>
+          <li><a :href="footerStore.cv" download="Kevin_Rousselet_CV.pdf"><img :src="footerStore.cvPath" alt="logo d'un cv"></a></li>
         </ul>
       </div>
     </footer>
@@ -16,7 +16,6 @@
 <script setup>
 import { useFooterStore } from '@/stores/FooterStore';
 const footerStore = useFooterStore();
-const cv = require('@/assets/kevin_rousselet_cv_infomaniak.pdf');
 </script>
 
 <style lang="scss" scoped>
@@ -43,6 +42,11 @@ footer {
 
             li {
                 width: inherit;
+
+                img {
+                  width: 50px;
+                  height: 50px;
+                }
             }
         }
     }

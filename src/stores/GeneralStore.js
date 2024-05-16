@@ -5,8 +5,8 @@ export const useGeneralStore = defineStore('generalStore', {
             // Solo properties
             activePage: 0,
             isActive: false,
-            web: require('@/assets/web.svg'),
-            webWide: require('@/assets/web_wide.svg'),
+            web: require('@/assets/web.webp'),
+            webWide: require('@/assets/web_wide.webp'),
             // Navigation Data
             pages: [
                 //HOME

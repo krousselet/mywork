@@ -2,7 +2,7 @@
   <header class="bg-body-transparent">
     <nav class="navbar navbar-expand-lg bg-body-transparent">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">myself</a>
+        <h1>Web Dev</h1>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -40,9 +40,15 @@ const generalStore = useGeneralStore();
   }
 }
 
+h1 {
+  cursor: default;
+  @media (min-width: 320px) and (max-width: 991px) {
+    font-size: 22px;
+  }
+}
 header {
     width: 100%;
-    height: 50px;
+    height: 72px;
 
     nav {
       width: 100%;
@@ -74,7 +80,11 @@ header {
                 align-items: center;
                 flex-direction: row;
                 margin-top: 50px;
+                font-size: 24px;
               }
+            }
+            @media (min-width: 991px) {
+              font-size: 32px;
             }
               &.router-link-exact-active {
                 color: var(--secondary-color);

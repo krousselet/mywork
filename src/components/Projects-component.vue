@@ -17,7 +17,7 @@
     }"
   >
       <swiper-slide v-for="(image, imageProjectIndex) in projectsStore.images" :key="imageProjectIndex" class="swiper-slide">
-        <a :href="image.link" :target="'_blank'"><img :src="image.path" :alt="image.alt"></a>
+        <a :href="image.link" :target="'_blank'"><img :lazy="true" :src="image.path" :alt="image.alt"></a>
       </swiper-slide>
     </swiper-container>
   </main>

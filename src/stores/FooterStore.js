@@ -24,7 +24,8 @@ export const useFooterStore = defineStore('footerStore', {
                     link: 'https://www.instagram.com/kevin.rousselet/'
                 },
             ],
-            cvPath: require('@/assets/mobile/cv.svg')
+            cvPath: require('@/assets/mobile/cv.svg'),
+            cv: require('@/assets/kevin_rousselet_cv_infomaniak.pdf'),
         }
     )
 })

@@ -85,18 +85,21 @@ form {
             animation: translate-x .3s ease forwards;
             @media (min-width: 320px) and (max-width: 991px) {
                 height: 125px;
-                border: 1px solid var(--secondary-color);
+                border-bottom: 1px solid var(--secondary-color);
                 width: 100%;
             }
             @media (min-width: 991px) {
                 height: 300px;
-    }
+            }
         }
 
     }
 
     button {
         margin-top: 50px;
+        @media (min-width: 991px) {
+                padding: 25px;
+            }
     }
 
 }
