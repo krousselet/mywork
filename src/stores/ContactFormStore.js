@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const useContactFormStore = defineStore('contactForm', {
     state: () => ({
-        labels: ['Nom :', 'Email :', 'Message :'],
+        labels: ['Nom', 'Email', 'Message'],
         formData: {
             name: '',
             email: '',

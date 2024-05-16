@@ -10,9 +10,10 @@
             <p class="catch">Un petit mot à mon propos</p>
         </div>
         <section id="music">
+            <audio ref="audio" :src="detailsStore.audio"></audio>
             <div class="button-container">
-                <button class="btn button">Jouer</button>
-                <button class="btn button">Pause</button>
+                <button class="btn button" @click="playAudio">Jouer</button>
+        <button class="btn button" @click="pauseAudio">Pause</button>
             </div>
         </section>
         <section id="presentation">
@@ -28,8 +29,22 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import { useDetailsStore } from '@/stores/DetailsStore';
+
+const audio = ref(null);
+
+const playAudio = () => {
+    if (audio.value) {
+        audio.value.play();
+    }
+};
+
+const pauseAudio = () => {
+    if (audio.value) {
+        audio.value.pause();
+    }
+};
 
 const detailsStore = useDetailsStore();
 

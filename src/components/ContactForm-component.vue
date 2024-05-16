@@ -64,7 +64,7 @@ form {
 
         label, input {
             min-width: 150px;
-            max-width: 350px;
+            width: 300px;
             margin-bottom: 25px;
             transform: translateX(-100px);
             animation: translate-x .3s ease forwards;
