@@ -35,9 +35,9 @@ register();
 
 .swiper-container {
   @media (min-width: 320px) and (max-width: 991px) {
-    width: 80%;
+    width: 95%;
     height: 100%;
-    padding: 20px;
+    margin: 0 auto;
   }
 
   @media (min-width: 991px) and (max-width: 1499px) {
