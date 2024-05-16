@@ -6,7 +6,7 @@ export const useFooterStore = defineStore('footerStore', {
                 {
                     path: require('@/assets/logo.png'),
                     alt: 'logo personnel',
-                    link: 'http://localhost:8080/',
+                    link: 'https://kevinrwebdev.netlify.app/',
                 },
                 {
                     path: require('@/assets/mobile/facebook.svg'),
@@ -25,7 +25,6 @@ export const useFooterStore = defineStore('footerStore', {
                 },
             ],
             cvPath: require('@/assets/mobile/cv.svg'),
-            cv: require('@/assets/kevin_rousselet_cv_infomaniak.pdf'),
         }
     )
 })

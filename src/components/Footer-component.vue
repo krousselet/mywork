@@ -7,7 +7,8 @@
               <img :src="logo.path" :alt="logo.alt">
             </a>
           </li>
-          <li><a :href="footerStore.cv" download="Kevin_Rousselet_CV.pdf"><img :src="footerStore.cvPath" alt="logo d'un cv"></a></li>
+          <li><a href="/kevin_rousselet_cv_infomaniak.pdf" download="kevin_rousselet_cv_infomaniak.pdf">
+            <img :src="footerStore.cvPath" alt="Download CV"></a></li>
         </ul>
       </div>
     </footer>
@@ -42,6 +43,7 @@ footer {
 
             li {
                 width: inherit;
+                overflow: hidden;
 
                 img {
                   width: 50px;
