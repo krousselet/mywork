@@ -19,17 +19,12 @@ export const useFooterStore = defineStore('footerStore', {
                     link: 'https://github.com/krousselet',
                 },
                 {
-                    path: '',
-                    alt: 'logo cv',
-                    link: '',
-                },
-                {
                     path: require('@/assets/mobile/instagram.svg'),
                     alt: 'logo instagram',
                     link: 'https://www.instagram.com/kevin.rousselet/'
                 },
-
-            ]
+            ],
+            cvPath: require('@/assets/mobile/cv.svg')
         }
     )
 })

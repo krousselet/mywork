@@ -2,7 +2,7 @@
     <main id="home" class="container-fluid">
         <div id="test">
             <div>
-                <img :src="generalStore.web" 
+                <img :src="generalStore.web" alt="image d'un monde numérique" 
                 :srcset="`${generalStore.webWide} 1920w, ${generalStore.web} 1024w`"
                 sizes="(min-width: 1024px) 1920px, 100vw">
             </div>

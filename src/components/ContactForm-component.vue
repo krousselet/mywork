@@ -26,7 +26,9 @@ const contactStore = useContactFormStore();
 form {
     display: flex;
     font-size: 16px;
-    width: 300px;
+    width: 90%;
+    height: 100%;
+    padding: 5px;
     margin-top: 25px;
     flex-direction: column;
     justify-content: center;
@@ -34,8 +36,20 @@ form {
     margin: 50px auto;
     height: 100%;
     animation: appear .5s ease forwards;
-    @media (min-width: 991px) {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.075);
+    border-radius: 7px;
+    position: relative;
+    @media (min-width: 991px) and (max-width: 1499px) {
         font-size: 32px;
+        width: 75%;
+    }
+    @media (min-width: 1499px) and (max-width: 3080px) {
+        font-size: 32px;
+        width: 50%;
     }
 
     .field-container {
