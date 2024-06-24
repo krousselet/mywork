@@ -23,6 +23,11 @@ export const useProjectsStore = defineStore('projectsStore', {
                     alt: 'Projet MovieQuiz en construction',
                     link: 'https://github.com/krousselet/movieQuizVuePinia',
                 },
+                {
+                    path: require('@/assets/mobile/roosterBis.svg'),
+                    alt: 'Projet RatteFarm en construction',
+                    link: 'https://github.com/krousselet/farm_project',
+                },
             ]
         }
     )
