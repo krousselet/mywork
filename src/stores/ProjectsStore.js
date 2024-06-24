@@ -27,6 +27,10 @@ export const useProjectsStore = defineStore('projectsStore', {
                     path: require('@/assets/mobile/roosterBis.svg'),
                     alt: 'Projet RatteFarm en construction',
                     link: 'https://github.com/krousselet/farm_project',
+                },{
+                    path: require('@/assets/mobile/logo.svg'),
+                    alt: 'Projet SkullDarts71 en construction',
+                    link: 'https://github.com/krousselet/skullDarts',
                 },
             ]
         }
