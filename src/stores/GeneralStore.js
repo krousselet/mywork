@@ -31,7 +31,7 @@ export const useGeneralStore = defineStore('generalStore', {
                     catch: 'me contacter'
                 },
             ],
-            languages: ['Symfony', 'VueJs', 'PHP', 'SQL', 'JavaScript', 'CSS', 'HTML'],
+            languages: ['Git', 'Trello', 'Symfony', 'VueJs', 'PHP', 'SQL', 'JavaScript', 'CSS', 'HTML'],
         }
     )
 })
